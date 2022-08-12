@@ -1,0 +1,69 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+}
+<script src="~/Content/js/CrearUsuario.js"></script>
+<div style="background-color:#F2F2F2;">
+    <br /><br />
+
+    <div class="row">
+        <div class="col-lg-4 col-md-4 col-sm-1 colxs-1">
+        </div>
+        <div class="col-lg-4 col-md-4 col-sm-10 colxs-10">
+            <div class="col-lg-12 col-md-12 col-sm-12 colxs-12 margen_login" style="background-color:#ffffff;">
+
+                <form method="post" action="/Usuario/SignOn" id="formularioUsuario">
+                    <h3 class="form-title">Crear Usuario</h3>
+
+
+                    <div class="form-group" style="text-align:left;">
+                        <i class="fa fa-user"></i>
+                        <label class="control-label" for="name">Escribe tu Nombre</label>
+                        <div class="rut-container"><input class="form-control placeholder-no-fix input_rut" type="text" autocomplete="off" placeholder="david" id="name" name="name" value="" maxlength="100" required="required"></div>
+                    </div>
+
+                    <div class="form-group" style="text-align:left;">
+                        <i class="fa fa-user"></i>
+                        <label class="control-label" for="username">Escribe tu email</label>
+                        <div class="rut-container"><input class="form-control placeholder-no-fix input_rut" type="text" autocomplete="off" placeholder="nombreusuario@gmail.com" id="username" name="username" value="" maxlength="40" required="required"></div>
+                    </div>
+
+                    <div class="form-group" style="text-align:left;">
+                        <i class="fa fa-lock"></i>
+                        <label for="password" class="control-label visible-ie8 visible-ie9">Escribe tu contraseña</label>
+                        <input class="form-control placeholder-no-fix" type="password" autocomplete="off" placeholder="Password" id="password" name="password" value="">
+                    </div>
+                    <div class="form-group" style="text-align:left;">
+                        <i class="fa fa-lock"></i>
+                        <label for="password2" class="control-label visible-ie8 visible-ie9">Vuelve a escribir la contraseña</label>
+                        <input class="form-control placeholder-no-fix" type="password" autocomplete="off" placeholder="Password" id="password2" name="password2" value="">
+                    </div>
+
+                    <div class="form-actions" style="text-align:right;">
+                        <button type="button" class="btn btn-danger btn-lg" id="buttonsignon" onclick="crear_usuario()">
+                            Crear Usuario<i class="fa fa-sign-in" aria-hidden="true"></i>
+                        </button>
+                    </div>
+
+
+                    <div style="text-align:right; padding-top:40px;">
+                        <div id="resultado_login1" class="message"></div>
+                        <div id="resultado_login2" class="message"></div>
+                        <div id="resultado_login3" class="message"></div>
+                        <div id="resultado_login4" class="message"></div>
+                        <div id="resultado_login5" class="message"></div>
+                    </div>
+
+                    <br><br><br><br>
+                </form>
+            </div>
+        </div>
+        <div class="col-lg-4 col-md-4 col-sm-1 colxs-1">
+        </div>
+    </div>
+    <br /><br /><br /><br /><br />
+</div>
+
+
+
+<input type="hidden" id="set_CrearUsuario" value="@Url.Action("set_CrearUsuario", "WS")" />

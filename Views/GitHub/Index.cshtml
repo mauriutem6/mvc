@@ -1,0 +1,47 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+}
+<script src="~/Content/js/GitHub.js"></script>
+
+<div style="background-color:#F2F2F2;">
+    <center><h2>GitHub</h2></center>
+
+
+    <div class="row">
+        <div class="col-lg-4 col-md-4 col-sm-1 colxs-1">
+        </div>
+        <div class="col-lg-4 col-md-4 col-sm-10 colxs-10">
+            <div class="col-lg-12 col-md-12 col-sm-12 colxs-12 margen_login" style="background-color:#ffffff;">
+
+                <form method="post" action="/Usuario/SignOn" id="formularioUsuario">
+                    <div class="form-actions" style="text-align:center;">
+                        <br /><br /><br />
+                        <button type="button" class="btn btn-danger btn-lg" id="buttonsignon" onclick="get_github()">
+                            Obtener Repositorio de github
+                        </button>
+                    </div>
+
+
+                    <div style="text-align:left; padding-top:40px;">
+                        <div id="resultado_login1" class="message"></div>
+                        <div id="header">
+                            <ul class="tabs">
+                            </ul>
+                        </div>
+
+                    </div>
+
+                    <br><br><br><br>
+                </form>
+            </div>
+        </div>
+        <div class="col-lg-4 col-md-4 col-sm-1 colxs-1">
+        </div>
+    </div>
+    <br /><br /><br /><br /><br />
+</div>
+
+
+<input type="hidden" id="get_github" value="@Url.Action("get_github", "WS")" />
+<input type="hidden" id="cantidad_archivos_repositorio_github" value="@ViewBag.cantidad_archivos_repositorio_github" />
